@@ -1,32 +1,109 @@
-function openContact() {
-    document.getElementById("contactModal").style.display = "block";
-}
+/* ════════════════════════════════════════════════════════════════════
+   DZXapps — Landing Page Script
+   ════════════════════════════════════════════════════════════════════ */
 
-function closeContact() {
-    document.getElementById("contactModal").style.display = "none";
-}
+document.addEventListener('DOMContentLoaded', () => {
 
-window.onclick = function(event) {
-
-    const modal = document.getElementById("contactModal");
-
-    if(event.target === modal){
-        closeContact();
-    }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const form = document.getElementById("contactForm");
-
-    form.addEventListener("submit", (e) => {
-
+  /* ─── Smooth scroll for in-page links ────────────────────────── */
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const targetId = link.getAttribute('href');
+      const target = document.querySelector(targetId);
+      if (target) {
         e.preventDefault();
-
-        const subject = "MainzIQ Website Contact";
-
-        window.location.href =
-            `mailto:support@mainziq.com?subject=${encodeURIComponent(subject)}`;
-
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        closeMobileMenu();
+      }
     });
+  });
+
+  /* ─── Nav background on scroll ───────────────────────────────── */
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 24);
+  };
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+
+  /* ─── Mobile menu toggle ──────────────────────────────────────── */
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function closeMobileMenu() {
+    if (burger) burger.classList.remove('open');
+    if (mobileMenu) mobileMenu.classList.remove('open');
+  }
+
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+  }
+
+  /* ─── Scroll reveal animation ─────────────────────────────────── */
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    // Fallback: reveal everything immediately
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
+
+  /* ─── Screens showcase tabs ───────────────────────────────────── */
+  const screenTabs = document.querySelectorAll('.screen-tab');
+  const screenTexts = document.querySelectorAll('.screen-text');
+  const screenPhones = document.querySelectorAll('.screen-phone');
+
+  function activateScreen(key) {
+    screenTabs.forEach(tab => tab.classList.toggle('active', tab.dataset.screen === key));
+    screenTexts.forEach(t => t.classList.toggle('active', t.dataset.screen === key));
+    screenPhones.forEach(p => p.classList.toggle('active', p.dataset.screen === key));
+  }
+
+  screenTabs.forEach(tab => {
+    tab.addEventListener('click', () => activateScreen(tab.dataset.screen));
+  });
+
+  /* Optional: auto-cycle through screens every 6s, pause on interaction */
+  let autoCycle = true;
+  let cycleIndex = 0;
+  const screenKeys = Array.from(screenTabs).map(t => t.dataset.screen);
+
+  let cycleTimer = setInterval(() => {
+    if (!autoCycle || !screenKeys.length) return;
+    cycleIndex = (cycleIndex + 1) % screenKeys.length;
+    activateScreen(screenKeys[cycleIndex]);
+  }, 6000);
+
+  screenTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      autoCycle = false;
+      clearInterval(cycleTimer);
+    });
+  });
+
+  /* ─── Contact form (no backend yet — local confirmation only) ─── */
+  const contactForm = document.getElementById('contactForm');
+  const contactNote = document.getElementById('contactNote');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      if (contactNote) {
+        contactNote.textContent = 'Takk! Meldingsfunksjonen er ikke koblet til e-post ennå, men vi har notert at du ønsker kontakt.';
+      }
+      contactForm.reset();
+    });
+  }
+
 });
