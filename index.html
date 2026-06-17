@@ -1,127 +1,455 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MainzIQ - Vehicle Maintenance & Cost Tracking</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DZXapps – Kjøretøy Service & Vedlikehold</title>
+  <meta name="description" content="Hold full kontroll på kjøretøyene dine. Service, kostnader og statistikk – samlet på ett sted." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<nav>
-    <div class="logo">
-        <img src="logo.png" alt="MainzIQ">
-        <span>MainzIQ</span>
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav-logo">
+      <img src="assets/logo.png" alt="DZXapps" class="nav-logo-img" />
+      <span>DZX<b>apps</b></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Funksjoner</a>
+      <a href="#screens">Appen</a>
+      <a href="#download">Last ned</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+    <a href="#download" class="nav-cta">Last ned</a>
+    <button class="nav-burger" id="navBurger" aria-label="Meny">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features">Funksjoner</a>
+    <a href="#screens">Appen</a>
+    <a href="#download">Last ned</a>
+    <a href="#contact">Kontakt</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Lanseres snart
+      </div>
+      <h1 class="hero-title">Full kontroll på<br/><span class="gradient-text">kjøretøyene dine</span></h1>
+      <p class="hero-sub">Service, kostnader, kilometerstand og statistikk – for alt du eier på hjul. Oversiktlig, raskt og laget for deg som bryr deg om bilen, MC-en eller campingvogna.</p>
+      <div class="hero-buttons">
+        <button class="store-btn-hero disabled" disabled>
+          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.42c1.42.07 2.38.74 3.2.8 1.23-.24 2.4-.93 3.72-.84 1.58.12 2.77.72 3.54 1.83-3.27 1.95-2.73 6.07.44 7.57-.65 1.62-1.52 3.23-2.9 4.5zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <div class="store-btn-text">
+            <span>Kommer til</span>
+            <strong>App Store</strong>
+          </div>
+        </button>
+        <button class="store-btn-hero disabled" disabled>
+          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M3.18 23.76a2 2 0 0 1-.93-1.74V2A2 2 0 0 1 3.18.25l11.31 11.74-11.31 11.77zm12.55-6.5-2.7-2.8L7.4 19.1l8.33-1.84zM21.1 13.5a1.78 1.78 0 0 1 0 3l-2.3 1.3-2.99-3.1 2.99-3.1 2.3 1.3zM7.4 4.9l5.63 4.64-2.7 2.8L7.4 4.9z"/></svg>
+          <div class="store-btn-text">
+            <span>Kommer til</span>
+            <strong>Google Play</strong>
+          </div>
+        </button>
+      </div>
+      <p class="hero-note">Ingen lenker tilgjengelig ennå — appen er under siste finpuss</p>
     </div>
 
-    <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#screenshots">Screenshots</a>
-        <a href="#" onclick="openContact()">Contact</a>
+    <div class="hero-visual">
+      <div class="phone-glow"></div>
+      <div class="phone-mockup">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="app-preview">
+              <div class="app-statusbar">
+                <span>8:57</span>
+                <div class="app-statusbar-icons">
+                  <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M7 11C7.8 11 8.5 10.3 8.5 9.5C8.5 8.7 7.8 8 7 8C6.2 8 5.5 8.7 5.5 9.5C5.5 10.3 6.2 11 7 11Z" fill="white"/><path d="M7 6.5C8.7 6.5 10.2 7.2 11.3 8.3L12.7 6.9C11.2 5.4 9.2 4.5 7 4.5C4.8 4.5 2.8 5.4 1.3 6.9L2.7 8.3C3.8 7.2 5.3 6.5 7 6.5Z" fill="white"/><path d="M7 2.5C9.8 2.5 12.4 3.6 14.2 5.5L12.8 4.1C11.3 2.6 9.3 1.7 7 1.7C4.7 1.7 2.7 2.6 1.2 4.1L0 5.5C1.6 3.6 4.2 2.5 7 2.5Z" fill="white" opacity="0.5"/></svg>
+                  <svg width="16" height="11" viewBox="0 0 16 11" fill="none"><path d="M1 11V5L8 1L15 5V11" stroke="white" stroke-width="1.3" fill="none"/></svg>
+                </div>
+              </div>
+              <div class="app-header-row">Dashboard</div>
+              <div class="app-card-main">
+                <div class="app-card-glow"></div>
+                <div class="app-label">TOTALT BRUKT I ÅR · 2026</div>
+                <div class="app-amount">53 639 NOK</div>
+                <div class="app-sub-label">Denne måneden</div>
+                <div class="app-sub-amount">40 879 NOK</div>
+              </div>
+              <div class="app-section-title-row">
+                <span>Mine kjøretøy</span>
+                <span class="app-see-all">Se alle</span>
+              </div>
+              <div class="app-vehicle-card">
+                <div class="app-vehicle-thumb moto"></div>
+                <div class="app-vehicle-info">
+                  <div class="app-vehicle-name">KTM Superduke 1290R</div>
+                  <div class="app-vehicle-sub">UX 4956 · 560 km</div>
+                </div>
+                <div class="app-vehicle-cost">14 189<span>kr/mnd</span></div>
+              </div>
+              <div class="app-vehicle-card">
+                <div class="app-vehicle-thumb car"></div>
+                <div class="app-vehicle-info">
+                  <div class="app-vehicle-name">Ford Mustang</div>
+                  <div class="app-vehicle-sub">AB 123456 · 58 296 km</div>
+                </div>
+                <div class="app-vehicle-cost">26 690<span>kr/mnd</span></div>
+              </div>
+              <div class="app-section-title-row"><span>Siste aktivitet</span></div>
+              <div class="app-activity">
+                <span class="app-activity-dot blue">⚙</span>
+                <div class="app-activity-mid">
+                  <div class="app-activity-name">Motorservice</div>
+                  <div class="app-activity-meta">KTM Superduke · 17.06</div>
+                </div>
+                <div class="app-activity-cost">5 690 kr</div>
+              </div>
+              <div class="app-activity">
+                <span class="app-activity-dot blue">●</span>
+                <div class="app-activity-mid">
+                  <div class="app-activity-name">Bremsservice</div>
+                  <div class="app-activity-meta">KTM Superduke · 16.06</div>
+                </div>
+                <div class="app-activity-cost">2 899 kr</div>
+              </div>
+              <div class="app-tabbar">
+                <div class="app-tab active">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                  <span>Dashboard</span>
+                </div>
+                <div class="app-tab">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="7" width="22" height="13" rx="2"/><path d="M5 7V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/></svg>
+                  <span>Kjøretøy</span>
+                </div>
+                <div class="app-tab">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  <span>Statistikk</span>
+                </div>
+                <div class="app-tab">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  <span>Innstillinger</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</nav>
+  </section>
 
-<header class="hero">
-    <img src="logo.png" class="hero-logo" alt="MainzIQ">
-
-    <h1>Track. Maintain. Save.</h1>
-
-    <p>
-        The complete vehicle maintenance and cost tracking app.
-        Keep track of services, repairs, expenses and ownership costs in one place.
-    </p>
-
-    <div class="hero-buttons">
-        <a href="#" class="btn primary">Google Play (Coming Soon)</a>
-        <a href="#" class="btn secondary">App Store (Coming Soon)</a>
+  <!-- TRUST STRIP -->
+  <section class="trust-strip">
+    <div class="container trust-inner">
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Dine data lagres trygt
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Norsk og engelsk støtte
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Bygget for raske oppdateringer
+      </div>
     </div>
+  </section>
 
-    <div class="badges">
-        <span>Cars</span>
-        <span>Motorcycles</span>
-        <span>Trucks</span>
-        <span>Other</span>
-    </div>
-</header>
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-eyebrow">Funksjoner</div>
+      <h2 class="section-title">Alt du trenger,<br/>ingenting du ikke trenger</h2>
+      <div class="features-grid">
 
-<section id="screenshots">
-    <h2>App Preview</h2>
-
-    <div class="screenshots">
-        <img src="dashboard.png" alt="Dashboard">
-        <img src="vehicles.png" alt="Vehicles">
-        <img src="statistics.png" alt="Statistics">
-        <img src="settings.png" alt="Settings">
-    </div>
-</section>
-
-<section id="features">
-    <h2>Features</h2>
-
-    <div class="feature-grid">
-
-        <div class="feature-card">
-            <h3>Maintenance Tracking</h3>
-            <p>Keep a complete service and maintenance history.</p>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          </div>
+          <h3>Dashboard</h3>
+          <p>Se totalkostnad for året, oversikt over kjøretøyene dine og siste servicer – rett på forsiden, uten å lete.</p>
         </div>
 
-        <div class="feature-card">
-            <h3>Cost Analytics</h3>
-            <p>Track ownership costs over time.</p>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="7" width="22" height="13" rx="2"/><path d="M5 7V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/></svg>
+          </div>
+          <h3>Kjøretøy</h3>
+          <p>Legg til biler, MC-er eller annet – med skiltnummer, kilometerstand, bilde, servicehistorikk og totalt brukt beløp.</p>
         </div>
 
-        <div class="feature-card">
-            <h3>Vehicle Management</h3>
-            <p>Manage multiple vehicles in one place.</p>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Statistikk</h3>
+          <p>Følg utgiftene dine per måned, år eller totalt. Se fordeling per kategori – motor, dekk, bremser og mer.</p>
         </div>
 
-        <div class="feature-card">
-            <h3>Statistics</h3>
-            <p>Visualize spending and maintenance trends.</p>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3>Innstillinger</h3>
+          <p>Velg språk og valuta, bytt mellom mørk og lys modus, og ta kontakt med support – rett fra appen.</p>
         </div>
 
+      </div>
     </div>
-</section>
+  </section>
 
-<footer>
-    <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms & Conditions</a>
-        <a href="#" onclick="openContact()">Contact</a>
+  <!-- SCREENS SHOWCASE -->
+  <section class="screens" id="screens">
+    <div class="container">
+      <div class="section-eyebrow">Se appen i bruk</div>
+      <h2 class="section-title">Designet for<br/>den som bryr seg om bilen sin</h2>
+
+      <div class="screens-tabs">
+        <button class="screen-tab active" data-screen="dashboard">Dashboard</button>
+        <button class="screen-tab" data-screen="vehicles">Kjøretøy</button>
+        <button class="screen-tab" data-screen="stats">Statistikk</button>
+        <button class="screen-tab" data-screen="settings">Innstillinger</button>
+      </div>
+
+      <div class="screens-display">
+        <div class="screen-text-block">
+          <div class="screen-text active" data-screen="dashboard">
+            <h3>Alt på ett sted</h3>
+            <p>Se årets totalkostnad, denne månedens utgifter, og de kjøretøyene du bruker mest – med siste service rett under.</p>
+          </div>
+          <div class="screen-text" data-screen="vehicles">
+            <h3>Hvert kjøretøy, full oversikt</h3>
+            <p>Bilde, skiltnummer, årsmodell, kilometerstand, antall servicer og totalt brukt beløp – alt synlig på et blikk.</p>
+          </div>
+          <div class="screen-text" data-screen="stats">
+            <h3>Forstå hvor pengene går</h3>
+            <p>Filtrer på måned, år eller alle data. Se kostnad per uke og fordeling per kategori som motor, dekk og bremser.</p>
+          </div>
+          <div class="screen-text" data-screen="settings">
+            <h3>Tilpasset deg</h3>
+            <p>Norsk eller engelsk, NOK eller annen valuta, mørk eller lys modus. Support og juridisk info er aldri langt unna.</p>
+          </div>
+        </div>
+
+        <div class="screen-phone-wrap">
+          <!-- Dashboard screen -->
+          <div class="screen-phone active" data-screen="dashboard">
+            <div class="sp-frame">
+              <div class="sp-notch"></div>
+              <div class="sp-content">
+                <div class="sp-title">Dashboard</div>
+                <div class="sp-stat-card">
+                  <div class="sp-stat-label">TOTALT BRUKT I ÅR · 2026</div>
+                  <div class="sp-stat-value">53 639 NOK</div>
+                  <div class="sp-stat-sub">Denne måneden</div>
+                  <div class="sp-stat-sub-val">40 879 NOK</div>
+                </div>
+                <div class="sp-row-title">Mine kjøretøy</div>
+                <div class="sp-vcard"><div class="sp-thumb moto"></div><div class="sp-vinfo"><b>KTM Superduke 1290R</b><span>UX 4956 · 560 km</span></div><div class="sp-vcost">14 189<small>kr/mnd</small></div></div>
+                <div class="sp-vcard"><div class="sp-thumb car"></div><div class="sp-vinfo"><b>Ford Mustang</b><span>AB 123456 · 58 296 km</span></div><div class="sp-vcost">26 690<small>kr/mnd</small></div></div>
+                <div class="sp-row-title">Siste aktivitet</div>
+                <div class="sp-act"><span class="sp-act-dot">⚙</span><div class="sp-act-info"><b>Motorservice</b><span>KTM · 17.06</span></div><b class="sp-act-cost">5 690 kr</b></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vehicles screen -->
+          <div class="screen-phone" data-screen="vehicles">
+            <div class="sp-frame">
+              <div class="sp-notch"></div>
+              <div class="sp-content">
+                <div class="sp-title-row"><span class="sp-title">Kjøretøy</span><span class="sp-add">+</span></div>
+                <div class="sp-vehicle-full">
+                  <div class="sp-vfull-img moto"><span class="sp-tag">UX 4956</span></div>
+                  <div class="sp-vfull-body">
+                    <div class="sp-vfull-top"><b>KTM Superduke 1290R</b><span>560 km</span></div>
+                    <div class="sp-vfull-year">2025</div>
+                    <div class="sp-vfull-stats">
+                      <div><span>Servicer</span><b>3</b></div>
+                      <div><span>Siste service</span><b>17.06.26</b></div>
+                      <div><span>Totalt</span><b class="blue">14 189</b></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sp-vehicle-full">
+                  <div class="sp-vfull-img car"><span class="sp-tag">AB 123456</span></div>
+                  <div class="sp-vfull-body">
+                    <div class="sp-vfull-top"><b>Ford Mustang</b><span>58 296 km</span></div>
+                    <div class="sp-vfull-year">2021</div>
+                    <div class="sp-vfull-stats">
+                      <div><span>Servicer</span><b>4</b></div>
+                      <div><span>Siste service</span><b>14.06.26</b></div>
+                      <div><span>Totalt</span><b class="blue">39 450</b></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats screen -->
+          <div class="screen-phone" data-screen="stats">
+            <div class="sp-frame">
+              <div class="sp-notch"></div>
+              <div class="sp-content">
+                <div class="sp-title">Statistikk</div>
+                <div class="sp-pills">
+                  <span class="sp-pill active">Måned</span><span class="sp-pill">År</span><span class="sp-pill">Alle</span>
+                </div>
+                <div class="sp-stat-card sm">
+                  <div class="sp-stat-label">TOTALT BRUKT · JUNI 2026</div>
+                  <div class="sp-stat-value">40 879 NOK</div>
+                  <div class="sp-stat-sub">5 serviceoppføringer</div>
+                </div>
+                <div class="sp-row-title">Kostnad per uke</div>
+                <div class="sp-bars">
+                  <div class="sp-bar" style="height:18%"><span>7k</span></div>
+                  <div class="sp-bar tall" style="height:60%"><span>25k</span></div>
+                  <div class="sp-bar active" style="height:24%"><span>9k</span></div>
+                  <div class="sp-bar" style="height:6%"><span>·</span></div>
+                </div>
+                <div class="sp-row-title">Fordeling per kategori</div>
+                <div class="sp-cat-bar">
+                  <span style="width:48%;background:#F87171"></span>
+                  <span style="width:31%;background:#A78BFA"></span>
+                  <span style="width:14%;background:#34D399"></span>
+                  <span style="width:7%;background:#FBBF24"></span>
+                </div>
+                <div class="sp-cat-list">
+                  <div><i style="background:#F87171"></i>Girkasse<b>48%</b></div>
+                  <div><i style="background:#A78BFA"></i>Motorservice<b>31%</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settings screen -->
+          <div class="screen-phone" data-screen="settings">
+            <div class="sp-frame">
+              <div class="sp-notch"></div>
+              <div class="sp-content">
+                <div class="sp-title">Innstillinger</div>
+                <div class="sp-setting-label">GENERELT</div>
+                <div class="sp-setting-group">
+                  <div class="sp-setting-row"><span>Språk</span><span class="sp-setting-val">Norsk ›</span></div>
+                  <div class="sp-setting-row"><span>Valuta</span><span class="sp-setting-val">NOK ›</span></div>
+                </div>
+                <div class="sp-setting-label">UTSEENDE</div>
+                <div class="sp-setting-group">
+                  <div class="sp-setting-row"><span>🌙 Mørk modus</span><div class="sp-toggle on"></div></div>
+                </div>
+                <div class="sp-setting-label">JURIDISK</div>
+                <div class="sp-setting-group">
+                  <div class="sp-setting-row"><span>Personvernerklæring</span><span class="sp-setting-val">›</span></div>
+                  <div class="sp-setting-row"><span>Vilkår og betingelser</span><span class="sp-setting-val">›</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <p>support@mainziq.com</p>
-
-    <p>© 2026 DZX Apps</p>
-</footer>
-
-<div class="modal" id="contactModal">
-    <div class="modal-content">
-
-        <span class="close" onclick="closeContact()">&times;</span>
-
-        <h2>Contact Us</h2>
-
-        <form id="contactForm">
-
-            <input type="text" placeholder="Name" required>
-
-            <input type="email" placeholder="Email" required>
-
-            <input type="text" placeholder="Subject" required>
-
-            <textarea rows="5" placeholder="Message"></textarea>
-
-            <button type="submit" class="btn primary">
-                Send Email
+  <!-- DOWNLOAD -->
+  <section class="download" id="download">
+    <div class="container">
+      <div class="download-card">
+        <div class="download-glow"></div>
+        <img src="assets/logo.png" alt="" class="download-logo-bg" />
+        <div class="download-content">
+          <div class="section-eyebrow" style="color:#93C5FD;">Last ned</div>
+          <h2 class="section-title" style="color:#fff;">Klar til å ta<br/>kontroll?</h2>
+          <p class="download-sub">Appen er under siste finpuss og lanseres snart, helt gratis, på App Store og Google Play.</p>
+          <div class="download-buttons">
+            <button class="store-btn disabled" disabled aria-label="App Store – kommer snart">
+              <div class="store-btn-icon">
+                <svg width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.42c1.42.07 2.38.74 3.2.8 1.23-.24 2.4-.93 3.72-.84 1.58.12 2.77.72 3.54 1.83-3.27 1.95-2.73 6.07.44 7.57-.65 1.62-1.52 3.23-2.9 4.5zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+              </div>
+              <div class="store-btn-text">
+                <span class="store-btn-small">Kommer snart på</span>
+                <span class="store-btn-big">App Store</span>
+              </div>
             </button>
-
-        </form>
-
+            <button class="store-btn disabled" disabled aria-label="Google Play – kommer snart">
+              <div class="store-btn-icon">
+                <svg width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M3.18 23.76a2 2 0 0 1-.93-1.74V2A2 2 0 0 1 3.18.25l11.31 11.74-11.31 11.77zm12.55-6.5-2.7-2.8L7.4 19.1l8.33-1.84zM21.1 13.5a1.78 1.78 0 0 1 0 3l-2.3 1.3-2.99-3.1 2.99-3.1 2.3 1.3zM7.4 4.9l5.63 4.64-2.7 2.8L7.4 4.9z"/></svg>
+              </div>
+              <div class="store-btn-text">
+                <span class="store-btn-small">Kommer snart på</span>
+                <span class="store-btn-big">Google Play</span>
+              </div>
+            </button>
+          </div>
+          <p class="coming-soon-badge">🚀 Følg med — lansering nærmer seg</p>
+        </div>
+      </div>
     </div>
-</div>
+  </section>
 
-<script src="script.js"></script>
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container contact-inner">
+      <div>
+        <div class="section-eyebrow">Kontakt</div>
+        <h2 class="section-title-sm">Har du spørsmål?</h2>
+        <p class="contact-text">E-post er ikke satt opp ennå, men du kan sende oss en melding her i mellomtiden. Vi leser alt som kommer inn.</p>
+        <div class="contact-meta">
+          <div class="contact-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Norge
+          </div>
+          <div class="contact-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Svar normalt innen 2–3 dager
+          </div>
+        </div>
+      </div>
+      <form class="contact-card" id="contactForm">
+        <h3>Send oss en melding</h3>
+        <input type="text" placeholder="Ditt navn" class="contact-input" required />
+        <input type="email" placeholder="E-postadresse" class="contact-input" required />
+        <textarea placeholder="Din melding..." class="contact-input contact-textarea" required></textarea>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send melding</button>
+        <p class="contact-form-note" id="contactNote"></p>
+      </form>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="DZXapps" class="footer-logo-img" />
+          DZX<span>apps</span>
+        </div>
+        <p class="footer-tagline">Smart kjøretøyoppfølging, laget i Norge.</p>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Personvernerklæring</a>
+        <a href="terms.html">Vilkår og betingelser</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+      <p class="footer-copy">© 2026 DZXapps. Alle rettigheter forbeholdt.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
