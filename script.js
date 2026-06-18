@@ -92,15 +92,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ─── Contact form (no backend yet — local confirmation only) ─── */
+  /* ─── Contact form — opens a pre-filled mailto to support@DZXapps.com ─── */
   const contactForm = document.getElementById('contactForm');
   const contactNote = document.getElementById('contactNote');
+  const SUPPORT_EMAIL = 'support@DZXapps.com';
 
   if (contactForm) {
     contactForm.addEventListener('submit', e => {
       e.preventDefault();
+
+      const name = document.getElementById('contactName')?.value.trim() || '';
+      const email = document.getElementById('contactEmail')?.value.trim() || '';
+      const message = document.getElementById('contactMessage')?.value.trim() || '';
+
+      const subject = `Melding fra ${name || 'DZXapps.com'}`;
+      const body = `${message}\n\n— ${name}\n${email}`;
+
+      const mailtoUrl = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoUrl;
+
       if (contactNote) {
-        contactNote.textContent = 'Takk! Meldingsfunksjonen er ikke koblet til e-post ennå, men vi har notert at du ønsker kontakt.';
+        contactNote.textContent = 'Åpner e-postappen din med meldingen ferdig utfylt …';
       }
       contactForm.reset();
     });
