@@ -371,9 +371,9 @@ h1, h2, h3, .nav-logo span, .footer-logo {
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
-.app-vehicle-thumb img { width: 26px; height: 26px; object-fit: contain; }
+.app-vehicle-thumb .emoji-icon { font-size: 20px; line-height: 1; }
 .app-vehicle-thumb.has-photo { background-size: cover; background-position: center; border: none; }
-.app-vehicle-thumb.has-photo img { display: none; }
+.app-vehicle-thumb.has-photo .emoji-icon { display: none; }
 .app-vehicle-info { flex: 1; min-width: 0; }
 .app-vehicle-name { font-size: 11px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .app-vehicle-sub  { font-size: 8.5px; color: var(--text3); margin-top: 1px; }
@@ -525,9 +525,9 @@ h1, h2, h3, .nav-logo span, .footer-logo {
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
-.sp-thumb img { width: 22px; height: 22px; object-fit: contain; }
+.sp-thumb .emoji-icon { font-size: 17px; line-height: 1; }
 .sp-thumb.has-photo { background-size: cover; background-position: center; border: none; }
-.sp-thumb.has-photo img { display: none; }
+.sp-thumb.has-photo .emoji-icon { display: none; }
 .sp-vinfo { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .sp-vinfo b { font-size: 10px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sp-vinfo span { font-size: 8px; color: var(--text3); }
@@ -548,9 +548,10 @@ h1, h2, h3, .nav-logo span, .footer-logo {
   background: radial-gradient(circle at 50% 45%, rgba(96,165,250,0.14), #10141f 70%);
   display: flex; align-items: center; justify-content: center;
 }
-.sp-vfull-img img { width: 40px; height: 40px; object-fit: contain; }
+.sp-vfull-img .emoji-icon { font-size: 28px; line-height: 1; }
+.sp-vfull-img .emoji-icon.large { font-size: 30px; }
 .sp-vfull-img.has-photo { background-size: cover; background-position: center; }
-.sp-vfull-img.has-photo img { display: none; }
+.sp-vfull-img.has-photo .emoji-icon { display: none; }
 .sp-tag { position: absolute; top: 6px; left: 6px; background: rgba(0,0,0,0.55); color: #fff; font-size: 7px; font-weight: 700; padding: 3px 7px; border-radius: 6px; }
 .sp-vfull-body { padding: 8px 10px; }
 .sp-vfull-top { display: flex; justify-content: space-between; align-items: baseline; }
