@@ -259,6 +259,10 @@ h1, h2, h3, .nav-logo span, .footer-logo {
 .store-btn-hero .store-btn-text span { font-size: 10px; color: var(--text3); }
 .store-btn-hero .store-btn-text strong { font-size: 14px; font-weight: 600; }
 
+/* Official store logo icons — sized to read as the same visual weight side by side */
+.store-icon { width: 22px; height: 22px; object-fit: contain; flex-shrink: 0; }
+.store-icon.apple { width: 19px; height: 23px; } /* Apple mark is taller-than-wide; Play triangle is wider-than-tall */
+
 .hero-note { font-size: 13px; color: var(--text3); }
 
 .btn-primary {
@@ -360,9 +364,16 @@ h1, h2, h3, .nav-logo span, .footer-logo {
   display: flex; align-items: center; gap: 8px;
   border: 1px solid rgba(255,255,255,0.05);
 }
-.app-vehicle-thumb { width: 44px; height: 36px; border-radius: 8px; flex-shrink: 0; background-size: cover; }
-.app-vehicle-thumb.moto { background: linear-gradient(135deg,#2a1a10,#4a2c14); }
-.app-vehicle-thumb.car  { background: linear-gradient(135deg,#3a1418,#5c1f24); }
+.app-vehicle-thumb {
+  width: 44px; height: 36px; border-radius: 8px; flex-shrink: 0;
+  background: linear-gradient(135deg, #1A2236, #141a28);
+  border: 1px solid rgba(96,165,250,0.12);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.app-vehicle-thumb img { width: 24px; height: 24px; object-fit: contain; }
+.app-vehicle-thumb.has-photo { background-size: cover; background-position: center; border: none; }
+.app-vehicle-thumb.has-photo img { display: none; }
 .app-vehicle-info { flex: 1; min-width: 0; }
 .app-vehicle-name { font-size: 11px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .app-vehicle-sub  { font-size: 8.5px; color: var(--text3); margin-top: 1px; }
@@ -507,9 +518,16 @@ h1, h2, h3, .nav-logo span, .footer-logo {
 .sp-row-title { font-size: 11px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; color: #fff; margin-top: 2px; }
 
 .sp-vcard { display: flex; align-items: center; gap: 8px; background: var(--card2); border-radius: 12px; padding: 8px; border: 1px solid rgba(255,255,255,0.05); }
-.sp-thumb { width: 40px; height: 32px; border-radius: 7px; flex-shrink: 0; }
-.sp-thumb.moto { background: linear-gradient(135deg,#2a1a10,#4a2c14); }
-.sp-thumb.car  { background: linear-gradient(135deg,#3a1418,#5c1f24); }
+.sp-thumb {
+  width: 40px; height: 32px; border-radius: 7px; flex-shrink: 0;
+  background: linear-gradient(135deg, #1A2236, #141a28);
+  border: 1px solid rgba(96,165,250,0.12);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.sp-thumb img { width: 20px; height: 20px; object-fit: contain; }
+.sp-thumb.has-photo { background-size: cover; background-position: center; border: none; }
+.sp-thumb.has-photo img { display: none; }
 .sp-vinfo { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .sp-vinfo b { font-size: 10px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sp-vinfo span { font-size: 8px; color: var(--text3); }
@@ -525,9 +543,14 @@ h1, h2, h3, .nav-logo span, .footer-logo {
 
 /* Vehicles screen specifics */
 .sp-vehicle-full { background: var(--card2); border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-.sp-vfull-img { height: 64px; position: relative; }
-.sp-vfull-img.moto { background: linear-gradient(135deg,#2a1a10,#4a2c14,#1a3a4a); }
-.sp-vfull-img.car  { background: linear-gradient(135deg,#3a1418,#5c1f24,#2a3a1a); }
+.sp-vfull-img {
+  height: 64px; position: relative;
+  background: linear-gradient(135deg, #161c2c, #10141f);
+  display: flex; align-items: center; justify-content: center;
+}
+.sp-vfull-img img { width: 34px; height: 34px; object-fit: contain; opacity: 0.9; }
+.sp-vfull-img.has-photo { background-size: cover; background-position: center; }
+.sp-vfull-img.has-photo img { display: none; }
 .sp-tag { position: absolute; top: 6px; left: 6px; background: rgba(0,0,0,0.55); color: #fff; font-size: 7px; font-weight: 700; padding: 3px 7px; border-radius: 6px; }
 .sp-vfull-body { padding: 8px 10px; }
 .sp-vfull-top { display: flex; justify-content: space-between; align-items: baseline; }
@@ -604,7 +627,9 @@ h1, h2, h3, .nav-logo span, .footer-logo {
   cursor: not-allowed;
 }
 .store-btn.disabled { opacity: 0.85; }
-.store-btn-icon { flex-shrink: 0; opacity: 0.85; }
+.store-btn-icon { flex-shrink: 0; opacity: 0.85; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; }
+.store-btn-icon .store-icon { width: 26px; height: 26px; }
+.store-btn-icon .store-icon.apple { width: 22px; height: 27px; }
 .store-btn-text { text-align: left; }
 .store-btn-small { display: block; font-size: 11px; opacity: 0.65; }
 .store-btn-big   { display: block; font-size: 16px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
@@ -617,6 +642,8 @@ h1, h2, h3, .nav-logo span, .footer-logo {
 .contact-meta { display: flex; flex-direction: column; gap: 10px; }
 .contact-meta-item { display: flex; align-items: center; gap: 9px; font-size: 13.5px; color: var(--text2); }
 .contact-meta-item svg { color: var(--blue-mid); flex-shrink: 0; }
+.contact-link { color: var(--blue-light); text-decoration: none; font-weight: 600; border-bottom: 1px solid rgba(96,165,250,0.3); transition: border-color 0.2s; }
+.contact-link:hover { border-color: var(--blue-light); }
 
 .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 12px; }
 .contact-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
@@ -637,7 +664,6 @@ h1, h2, h3, .nav-logo span, .footer-logo {
 .footer-logo { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 600; color: var(--text); }
 .footer-logo-img { width: 28px; height: 28px; border-radius: 8px; }
 .footer-logo span { color: var(--blue-light); font-weight: 700; }
-.footer-tagline { font-size: 13px; color: var(--text3); margin-top: 2px; }
 .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
 .footer-links a { font-size: 13px; color: var(--text2); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--text); }
