@@ -1,81 +1,193 @@
+```html
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vilkår og betingelser – MainzIQ av DZX Apps</title>
+  <title>Terms & Conditions - MainzIQ by DZX Apps</title>
+
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
   <style>
-    .legal-page { max-width: 720px; margin: 0 auto; padding: 130px 24px 90px; }
-    .legal-page h1 { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; margin-bottom: 8px; }
-    .legal-date  { font-size: 13px; color: var(--text3); margin-bottom: 12px; }
-    .legal-intro { font-size: 15px; color: var(--text2); line-height: 1.7; margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
-    .legal-page h2 { font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 700; margin: 36px 0 12px; }
-    .legal-page p  { font-size: 15px; color: var(--text2); line-height: 1.75; margin-bottom: 16px; }
-    .legal-page a  { color: var(--blue-mid); text-decoration: none; border-bottom: 1px solid rgba(59,130,246,0.3); }
-    .legal-page a:hover { border-color: var(--blue-mid); }
-    .legal-page ul { list-style: none; padding: 0; }
-    .legal-page ul li {
-      font-size: 15px; color: var(--text2); line-height: 1.7;
-      padding-left: 20px; position: relative; margin-bottom: 8px;
+    .legal-page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 130px 24px 90px;
     }
-    .legal-page ul li::before { content: '–'; position: absolute; left: 0; color: var(--blue-mid); }
+
+    .legal-page h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .legal-date {
+      font-size: 13px;
+      color: var(--text3);
+      margin-bottom: 12px;
+    }
+
+    .legal-intro {
+      font-size: 15px;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legal-page h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      margin: 36px 0 12px;
+    }
+
+    .legal-page p {
+      font-size: 15px;
+      color: var(--text2);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .legal-page a {
+      color: var(--blue-mid);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(59,130,246,0.3);
+    }
+
+    .legal-page a:hover {
+      border-color: var(--blue-mid);
+    }
+
     .back-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      color: var(--blue-mid); text-decoration: none;
-      font-size: 14px; font-weight: 600; margin-bottom: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--blue-mid);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 32px;
     }
-    .back-link:hover { color: var(--blue-light); }
+
+    .back-link:hover {
+      color: var(--blue-light);
+    }
+
+    .legal-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      margin: 24px 0;
+      font-size: 14px;
+      color: var(--text2);
+    }
   </style>
 </head>
 <body>
 
   <header class="nav scrolled">
     <a href="index.html" class="nav-logo">
-      <img src="assets/logo.png" alt="DZXapps" class="nav-logo-img" />
+      <img src="assets/logo.png" alt="DZX Apps" class="nav-logo-img" />
       <span>DZX<b>apps</b></span>
     </a>
   </header>
 
   <div class="legal-page">
-    <a href="index.html" class="back-link">← Tilbake til forsiden</a>
-    <h1>Vilkår og betingelser</h1>
-    <p class="legal-date">Sist oppdatert: juni 2026</p>
-    <p class="legal-intro">Disse vilkårene («Vilkårene») gjelder for din bruk av MainzIQ, levert av DZX Apps («vi», «oss» eller «vår»). Ved å laste ned eller bruke appen godtar du disse Vilkårene i sin helhet.</p>
 
-    <h2>Bruk av appen</h2>
-    <p>MainzIQ er laget for å hjelpe brukere med å følge opp kjøretøyvedlikehold, utgifter, kilometerstand og eierkostnader.</p>
+    <a href="index.html" class="back-link">← Back to Home</a>
 
-    <h2>Riktighet av informasjon</h2>
-    <p>Brukere er selv ansvarlige for at informasjonen som legges inn i appen er korrekt og oppdatert.</p>
+    <h1>Terms & Conditions</h1>
 
-    <h2>Tilgjengelighet</h2>
-    <p>Vi tilstreber en pålitelig opplevelse, men garanterer ikke uavbrutt tilgjengelighet eller feilfri drift.</p>
+    <p class="legal-date">
+      Last updated: 22.06.2026
+    </p>
 
-    <h2>Ansvarsbegrensning</h2>
-    <p>DZX Apps er ikke ansvarlig for skader, tap eller beslutninger som følge av bruk av informasjon lagret i appen.</p>
+    <p class="legal-intro">
+      These Terms & Conditions ("Terms") govern your use of MainzIQ,
+      provided by DZX Apps ("we", "us", or "our").
+      By downloading, accessing or using MainzIQ, you agree to be bound
+      by these Terms.
+    </p>
 
-    <h2>Endringer</h2>
-    <p>Disse vilkårene kan oppdateres fra tid til annen. Fortsatt bruk av appen utgjør en aksept av eventuelle endringer.</p>
+    <h2>Use of the App</h2>
+    <p>
+      MainzIQ is designed to help users manage vehicles, maintenance records,
+      service history, expenses, mileage and related information.
+      The app may also provide backup, synchronization and data export features.
+    </p>
+
+    <h2>Accuracy of Information</h2>
+    <p>
+      Users are responsible for ensuring that information entered into the app
+      is accurate, up to date and lawful to store.
+      MainzIQ does not verify or validate user-generated content.
+    </p>
+
+    <h2>Availability</h2>
+    <p>
+      We strive to provide a stable and reliable service, but we do not guarantee
+      uninterrupted availability, error-free operation or that data will always
+      be accessible.
+    </p>
+
+    <div class="legal-card">
+      <strong>Important:</strong><br>
+      MainzIQ should not be relied upon as the sole source of maintenance,
+      warranty or legal vehicle documentation. Users are responsible for keeping
+      their own records where required.
+    </div>
+
+    <h2>Limitation of Liability</h2>
+    <p>
+      DZX Apps shall not be liable for any direct or indirect damages, losses,
+      loss of data or decisions resulting from the use of, or inability to use,
+      the app and its content.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      These Terms may be updated at any time.
+      Continued use of MainzIQ after changes have been published constitutes
+      acceptance of the updated Terms.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      If you have any questions regarding these Terms & Conditions,
+      please contact DZX Apps at
+      <strong>support@dzxapps.com</strong>.
+    </p>
+
   </div>
 
   <footer class="footer">
     <div class="container footer-inner">
+
       <div class="footer-logo">
-        <img src="assets/logo.png" alt="DZXapps" class="footer-logo-img" />
+        <img src="assets/logo.png" alt="DZX Apps" class="footer-logo-img" />
         DZX<span>apps</span>
       </div>
+
       <div class="footer-links">
-        <a href="privacy.html">Personvernerklæring</a>
-        <a href="terms.html">Vilkår og betingelser</a>
-        <a href="index.html#contact">Kontakt</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="index.html#contact">Contact</a>
       </div>
-      <p class="footer-copy">© 2026 DZXapps. Alle rettigheter forbeholdt.</p>
+
+      <p class="footer-copy">
+        © 2026 DZX Apps. All rights reserved.
+      </p>
+
     </div>
   </footer>
 
 </body>
 </html>
+```
