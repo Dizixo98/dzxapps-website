@@ -5,15 +5,33 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ─── Smooth scroll for in-page links ────────────────────────── */
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  /* Handles both "#contact" (pure anchor) and "index.html#contact"
+     (anchor links that also include the filename, used on privacy.html
+     and terms.html so the link works from any page). When the target
+     anchor exists on the CURRENT page, we intercept the click and smooth
+     scroll directly instead of letting the browser reload/jump, which
+     previously caused a visible "jump to top, then scroll down" effect. */
+  document.querySelectorAll('a[href*="#"]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    const hashIndex = href.indexOf('#');
+    const pathPart = href.slice(0, hashIndex);   // e.g. "" or "index.html"
+    const hashPart = href.slice(hashIndex);       // e.g. "#contact"
+
+    // Resolve whether this link points at the current page.
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    const pointsToCurrentPage = pathPart === '' || pathPart === currentFile;
+
+    if (!pointsToCurrentPage) return; // let the browser navigate normally (e.g. privacy.html -> index.html#contact)
+
+    const target = document.querySelector(hashPart);
+    if (!target) return; // no matching element on this page; let default behavior happen
+
     link.addEventListener('click', e => {
-      const targetId = link.getAttribute('href');
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        closeMobileMenu();
-      }
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeMobileMenu();
     });
   });
 
