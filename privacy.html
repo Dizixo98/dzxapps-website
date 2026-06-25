@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,6 +53,28 @@
       margin-bottom: 16px;
     }
 
+    .legal-page ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 16px;
+    }
+
+    .legal-page ul li {
+      font-size: 15px;
+      color: var(--text2);
+      line-height: 1.7;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .legal-page ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--blue-mid);
+    }
+
     .legal-page a {
       color: var(--blue-mid);
       text-decoration: none;
@@ -88,6 +109,34 @@
       font-size: 14px;
       color: var(--text2);
     }
+
+    .legal-card strong {
+      color: var(--text);
+    }
+
+    .legal-table-summary {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 28px;
+      font-size: 13.5px;
+    }
+    .legal-table-summary th {
+      text-align: left;
+      color: var(--text3);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0 12px 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-table-summary td {
+      padding: 10px 12px 10px 0;
+      color: var(--text2);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .legal-table-summary tr:last-child td { border-bottom: none; }
   </style>
 </head>
 <body>
@@ -112,17 +161,44 @@
     <p class="legal-intro">
       DZX Apps ("we", "us", or "our") is committed to protecting your privacy.
       This Privacy Policy explains what information MainzIQ stores, how it is used,
-      and how it is protected.
+      how it is protected, and how you can control or delete it.
     </p>
+
+    <h2>Quick Summary</h2>
+    <table class="legal-table-summary">
+      <tr><th>Question</th><th>Answer</th></tr>
+      <tr><td>Does MainzIQ collect analytics or crash data?</td><td>No</td></tr>
+      <tr><td>Does MainzIQ sell or share data with advertisers?</td><td>No</td></tr>
+      <tr><td>Is an account required to use the app?</td><td>No — local use is fully supported</td></tr>
+      <tr><td>Where is data stored without an account?</td><td>Locally on your device only</td></tr>
+      <tr><td>Where is data stored with Google Sign-In?</td><td>Google Firebase (Cloud Firestore), for sync and backup</td></tr>
+      <tr><td>Can I delete my data?</td><td>Yes, at any time — see "Your Rights and Data Deletion" below</td></tr>
+      <tr><td>Is the app directed at children?</td><td>No</td></tr>
+    </table>
 
     <h2>Information We Store</h2>
     <p>
       MainzIQ stores information that you enter into the app, including vehicle
-      data, service records, mileage and app settings.
+      data, service records, mileage, photos and app settings.
       If you use the app without an account, data is stored only locally on your
       device.
       If you sign in with Google, your data may also be securely stored in the
       cloud for backup and synchronization across devices.
+    </p>
+    <p>
+      We do not request or collect your name, contact list, location, or any
+      information beyond what is needed for the Google Sign-In process itself
+      (your Google account identifier and email address, used solely to link
+      your synced data to your account).
+    </p>
+
+    <h2>No Analytics or Crash Reporting</h2>
+    <p>
+      MainzIQ does not use Firebase Analytics, Google Analytics, Firebase
+      Crashlytics, or any other third-party analytics or crash-reporting tool.
+      We do not automatically collect usage statistics, device telemetry, or
+      behavioral data. The only data processed by the app is the data you
+      explicitly enter.
     </p>
 
     <h2>How We Use Data</h2>
@@ -134,17 +210,19 @@
 
     <h2>Data Sharing</h2>
     <p>
-      MainzIQ does not sell, rent or share your personal data with third parties.
-      When using Google Sign-In, Google Firebase is used for authentication and
-      storage of synchronized data.
+      MainzIQ does not sell, rent, or share your personal data with third
+      parties for advertising or marketing purposes. When using Google
+      Sign-In, Google Firebase is used strictly as our infrastructure
+      provider for authentication and storage of synchronized data, under
+      Google's own data processing terms.
     </p>
 
     <h2>Data Security</h2>
     <p>
-      Data is stored either locally on your device or in Firebase Cloud Firestore
-      when synchronization is enabled.
-      We use security measures provided by Google Firebase to help protect stored
-      data.
+      Data is stored either locally on your device or in Firebase Cloud
+      Firestore when synchronization is enabled.
+      We use security measures provided by Google Firebase, including
+      encryption in transit, to help protect stored data.
       However, no method of electronic storage or transmission can guarantee
       absolute security.
     </p>
@@ -164,7 +242,33 @@
       <strong>Important:</strong><br>
       Images attached to vehicles or service records may be stored locally on
       your device and may not be included in cloud backups or synchronization.
+      If you uninstall the app or lose your device, locally stored images
+      cannot be recovered.
     </div>
+
+    <h2>Your Rights and Data Deletion</h2>
+    <p>You can manage or delete your data at any time:</p>
+    <ul>
+      <li>Delete individual vehicles or service records directly within the app — this permanently removes them from your device and, if signed in, from the cloud.</li>
+      <li>Sign out of your Google account in the app to stop future cloud synchronization.</li>
+      <li>Uninstall the app to remove all locally stored data from your device.</li>
+      <li>Request full deletion of your cloud-stored account data by contacting us at the email below — we will process such requests within 30 days.</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      MainzIQ is not directed at children and has no specific age restriction
+      for general use. We do not knowingly collect personal information from
+      children. If you believe a child has provided personal information to
+      us, please contact us so we can delete it.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy as the app evolves. Material changes
+      will be announced within the app. Continued use of MainzIQ after such
+      changes constitutes acceptance of the updated policy.
+    </p>
 
     <h2>Contact</h2>
     <p>
@@ -190,7 +294,7 @@
       </div>
 
       <p class="footer-copy">
-        © 2025 DZX Apps. All rights reserved.
+        © 2026 DZX Apps. All rights reserved.
       </p>
 
     </div>
@@ -198,4 +302,3 @@
 
 </body>
 </html>
-```
