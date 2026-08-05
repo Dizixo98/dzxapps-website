@@ -155,7 +155,7 @@
     <h1>Privacy Policy</h1>
 
     <p class="legal-date">
-      Last updated: 01.07.2026
+      Last updated: 05.08.2026
     </p>
 
     <p class="legal-intro">
@@ -167,91 +167,69 @@
     <h2>Quick Summary</h2>
     <table class="legal-table-summary">
       <tr><th>Question</th><th>Answer</th></tr>
-      <tr>
-      <td>Does MainzIQ collect analytics or crash data?</td>
-      <td>Anonymous analytics (Firebase Analytics). No crash reporting.</td>
-      </tr>
       <tr><td>Does MainzIQ sell or share data with advertisers?</td><td>No</td></tr>
       <tr><td>Is an account required to use the app?</td><td>No — local use is fully supported</td></tr>
       <tr><td>Where is data stored without an account?</td><td>Locally on your device only</td></tr>
-      <tr><td>Where is data stored with Google Sign-In?</td><td>Google Firebase (Cloud Firestore), for sync and backup</td></tr>
-      <tr><td>Can I delete my data?</td><td>Yes, at any time — see "Your Rights and Data Deletion" below</td></tr>
+      <tr><td>Where is data stored when signed in?</td><td>Firebase Authentication and Cloud Firestore, for sync and backup</td></tr>
+      <tr><td>Which sign-in options are available?</td><td>Google and Apple</td></tr>
+      <tr><td>Are service images synced to the cloud?</td><td>Only with MainzIQ Premium</td></tr>
+      <tr><td>Can I delete my data?</td><td>Yes, at any time — including directly from account settings in the app</td></tr>
       <tr><td>Is the app directed at children?</td><td>No</td></tr>
     </table>
 
     <h2>Information We Store</h2>
     <p>
-      MainzIQ stores information you enter into the app, including vehicle data,
-      service records, mileage, images and app settings. If you sign in with
-      Google, your data is also securely stored in Firebase Cloud Firestore for
-      backup and synchronization across devices.
-    </p>
-    <p>
-      We do not request or collect your name, contact list, location, or any
-      information beyond what is needed for the Google Sign-In process itself
-      (your Google account identifier and email address, used solely to link
-      your synced data to your account).
+      MainzIQ stores the information you add to the app, including vehicles,
+      service history, mileage, images and settings. If you sign in with
+      Google or Apple, your data is securely stored in Firebase Authentication
+      and Firebase Cloud Firestore for authentication, backup and
+      synchronization across your devices. If you have MainzIQ Premium,
+      service images are also securely synchronized between your devices.
     </p>
 
-    <h2>Analytics</h2>
+    <h2>How We Use Your Data</h2>
     <p>
-      MainzIQ uses Google Firebase Analytics to collect anonymous usage information,
-      such as app launches, screen views and feature usage. This information helps
-      us improve the app's quality, stability and overall user experience.
-    </p>
-
-    <p>
-      Firebase Analytics is not used for advertising, personalized marketing or
-      user profiling. The content you store in MainzIQ, including your vehicles,
-      service history, mileage, notes and photos, is never analyzed for analytics
-      purposes.
-    </p>
-
-    <p>
-      MainzIQ does not currently use Firebase Crashlytics or any other
-      crash-reporting service.
-    </p>
-
-    <h2>How We Use Data</h2>
-    <p>
-      The information is used solely to provide the app's functionality,
-      including vehicle management, maintenance history, statistics, exports
-      and synchronization. For vehicles added using automatic lookup, MainzIQ
-      may retrieve updated EU inspection information from the Norwegian
-      Public Roads Administration once per day.
+      Your information is used solely to provide the app's features,
+      including vehicle management, service history, statistics, export,
+      Premium features and synchronization. For vehicles added using
+      automatic lookup, MainzIQ may retrieve updated information about the
+      next roadworthiness inspection from the Norwegian Public Roads
+      Administration once per day.
     </p>
 
     <h2>Data Sharing</h2>
     <p>
       MainzIQ does not sell or share your personal information with third
-      parties for advertising or marketing purposes. Google Firebase is used
-      for authentication, cloud storage and synchronization. When automatic
-      vehicle lookup is used, the vehicle registration number is sent securely
-      to the Norwegian Public Roads Administration (Statens vegvesen) public
-      API to retrieve vehicle information.
+      parties for marketing purposes. When you sign in with Google or Apple,
+      MainzIQ uses Firebase Authentication and Firebase Cloud Firestore for
+      authentication, cloud storage and synchronization. When automatic
+      vehicle lookup is used, your registration number is sent to the
+      Norwegian Public Roads Administration's public API to retrieve vehicle
+      information.
     </p>
 
     <h2>Data Security</h2>
     <p>
-      Data is stored either locally on your device or securely in Firebase
-      Cloud Firestore when synchronization is enabled. Communication with our
-      cloud services is encrypted in transit. Although we use industry-standard
-      security measures, no method of electronic storage or transmission can
-      guarantee absolute security.
+      Your data is stored either locally on your device or securely in
+      Firebase Cloud Firestore when synchronization is enabled. If you have
+      MainzIQ Premium, service images may also be securely stored in the
+      cloud. All communication with our cloud services is encrypted. While we
+      use industry-standard security measures, no system can guarantee
+      complete security.
     </p>
 
     <h2>Cloud Storage and Synchronization</h2>
     <p>
-      When you sign in with Google, your vehicles, service history, mileage
-      and other information are securely synchronized between your devices.
-      Images may remain stored only on your device and are not necessarily
-      included in cloud synchronization.
+      When you sign in with Google or Apple, your vehicles, service history,
+      mileage and other information are securely synchronized across your
+      devices. If you have MainzIQ Premium, service images are also securely
+      synchronized between your devices.
     </p>
 
     <div class="legal-card">
       <strong>Important:</strong><br>
-      Images attached to vehicles or service records may be stored locally on
-      your device and may not be included in cloud backups or synchronization.
+      Without MainzIQ Premium, service images are stored locally on your
+      device only and are not included in cloud synchronization or backup.
       If you uninstall the app or lose your device, locally stored images
       cannot be recovered.
     </div>
@@ -260,9 +238,10 @@
     <p>You can manage or delete your data at any time:</p>
     <ul>
       <li>Delete individual vehicles or service records directly within the app — this permanently removes them from your device and, if signed in, from the cloud.</li>
-      <li>Sign out of your Google account in the app to stop future cloud synchronization.</li>
+      <li>Delete your account directly from the account settings within the app.</li>
+      <li>Sign out of your Google or Apple account in the app to stop future cloud synchronization.</li>
       <li>Uninstall the app to remove all locally stored data from your device.</li>
-      <li>Request full deletion of your cloud-stored account data by contacting us at the email below — we will process such requests within 30 days.</li>
+      <li>Contact us at the email below if you have questions about privacy, data processing, or need help deleting your account or cloud data.</li>
     </ul>
 
     <h2>Children's Privacy</h2>
@@ -282,9 +261,10 @@
 
     <h2>Contact</h2>
     <p>
-      If you have any questions regarding privacy, data processing or wish to
-      request deletion of your account or cloud data, please contact DZX Apps
-      at <strong>Support@DZXapps.com</strong>.
+      If you have questions about privacy, data processing or would like your
+      account or cloud data deleted, you can contact DZX Apps at
+      <strong>Support@DZXapps.com</strong>. You can also delete your account
+      directly from the account settings within the app.
     </p>
 
   </div>
